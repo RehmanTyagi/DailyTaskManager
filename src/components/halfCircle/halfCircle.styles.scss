@@ -1,0 +1,23 @@
+.half-circle {
+  position: absolute;
+  right: -50px;
+  bottom: 30px;
+}
+
+.circle-flip {
+  position: absolute;
+  right: -50px;
+  top: 30px;
+}
+
+.high-circle {
+  stroke: #ffdf00;
+}
+
+.medium-circle {
+  stroke: white;
+}
+
+.low-circle {
+  stroke: rgb(255, 62, 62);
+}

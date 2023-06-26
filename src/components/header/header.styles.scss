@@ -1,0 +1,10 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  position: relative;
+  .hamburger-btn {
+    z-index: 1200;
+  }
+}

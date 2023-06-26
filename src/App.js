@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BsReceipt } from 'react-icons/bs'
+
+// components
+import AppHeader from "./components/header/header.component";
+import ProgressBar from "./components/progressBar/progressBar.component";
+import TaskContainer from "./components/taskContainer/taskContainer.component";
+import TaskForm from "./components/taskForm/taskForm.component";
+import tasks from "./tasks";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="application">
+      <AppHeader />
+      <ProgressBar tasks={tasks} />
+      <div className="today-total-task"><span>You have <span>0</span> tasks for today</span><BsReceipt /></div>
+      <TaskContainer tasks={tasks} />
     </div>
-  );
+  )
 }
 
 export default App;
