@@ -9,3 +9,9 @@
 .tasks-container::-webkit-scrollbar-thumb {
   background-color: black;
 }
+
+@media (max-width: 450px) {
+  .tasks-container::-webkit-scrollbar {
+    display: none;
+  }
+}
