@@ -15,7 +15,7 @@ const ProgressBar = ({ tasks }) => {
         <div className="progress-container">
             <ProgressCircle percentage={percentage} circleWidth='80' />
             <div className="total-task-counter">
-                <p>Weekly Progress</p>
+                <p>Today's Progress</p>
                 <div><span>Total Task: </span><span>{tasks.length}</span></div>
             </div>
             <BsGraphUpArrow className="progress-graph-icon" />

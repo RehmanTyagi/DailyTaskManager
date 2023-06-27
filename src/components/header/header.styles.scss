@@ -7,4 +7,13 @@
   .hamburger-btn {
     z-index: 1200;
   }
+  .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .logo span:last-child {
+    font-size: 0.7rem;
+    margin: 0.1rem auto;
+  }
 }

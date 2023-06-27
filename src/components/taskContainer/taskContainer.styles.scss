@@ -1,6 +1,7 @@
 .tasks-container {
   overflow-y: scroll;
-  height: 60vh;
+  height: 100%;
+  border-radius: 20px;
 }
 .tasks-container::-webkit-scrollbar {
   width: 10px;
