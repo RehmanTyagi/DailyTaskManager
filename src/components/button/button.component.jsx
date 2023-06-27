@@ -1,7 +1,7 @@
 import './button.styles.scss'
 
-const CustomButton = ({ className, buttonText, buttonStyle }) => {
-    return <button style={buttonStyle} className={`custom-btn ${className}`}>{buttonText}</button>
+const CustomButton = ({ className, buttonText, buttonStyle, onClick }) => {
+    return <button onClick={onClick} style={buttonStyle} className={`custom-btn ${className}`}>{buttonText}</button>
 }
 
 export default CustomButton;

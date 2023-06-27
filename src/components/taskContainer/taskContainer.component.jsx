@@ -1,13 +1,15 @@
 import './taskContainer.styles.scss'
-
+import { AppContext } from "../../contexts/app.context";
+import { useContext } from "react";
 //components
 import Task from "../task/task.component";
 
-const TaskContainer = ({ tasks }) => {
+const TaskContainer = () => {
+    const { tasks } = useContext(AppContext)
     return (
         <div className="tasks-container">
             {
-                tasks.map((task, index) => <Task isCircleFlip={index % 2 === 0 ? 'circle-flip' : ''} key={index} title={task.title} description={task.description} priority={task.priority} />)
+                tasks.map((task, index) => <Task isCircleFlip={index % 2 === 0 ? 'circle-flip' : ''} key={index} title={task.taskTitle} description={task.taskDescription} priority={task.taskPriority} />)
             }
         </div>
     )
