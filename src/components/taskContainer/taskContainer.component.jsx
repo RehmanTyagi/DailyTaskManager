@@ -9,7 +9,7 @@ const TaskContainer = () => {
     return (
         <div className="tasks-container">
             {
-                tasks.map((task, index) => <Task isCircleFlip={index % 2 === 0 ? 'circle-flip' : ''} key={index} title={task.taskTitle} description={task.taskDescription} priority={task.taskPriority} />)
+                tasks.map((task, index) => <Task taskID={task.taskID} isCircleFlip={index % 2 === 0 ? 'circle-flip' : ''} key={index} title={task.taskTitle} description={task.taskDescription} priority={task.taskPriority} />)
             }
         </div>
     )

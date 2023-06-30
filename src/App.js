@@ -7,11 +7,10 @@ import { AppContext } from "./contexts/app.context";
 import AppHeader from "./components/header/header.component";
 import ProgressBar from "./components/progressBar/progressBar.component";
 import TaskContainer from "./components/taskContainer/taskContainer.component";
-import tasks from "./tasks";
 import TaskForm from './components/taskForm/taskForm.component'
 
 function App() {
-  const { isFormOpen } = useContext(AppContext)
+  const { isFormOpen, tasks } = useContext(AppContext)
 
   return (
     <div className="application">
@@ -20,7 +19,7 @@ function App() {
       }
       <AppHeader />
       <ProgressBar tasks={tasks} />
-      <div className="today-total-task"><span>You have <span>0</span> tasks for today</span><BsReceipt /></div>
+      <div className="today-total-task"><span>You have <span>{tasks.length}</span> tasks for today</span><BsReceipt /></div>
       <TaskContainer tasks={tasks} />
     </div>
   )

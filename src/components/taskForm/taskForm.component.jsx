@@ -12,15 +12,17 @@ const TaskForm = () => {
     const [taskDescription, setTaskDescription] = useState('')
     const [taskPriority, setTaskPriority] = useState('')
 
+
     const formSubmitHandler = (e) => {
-        if (!taskTitle || !taskPriority) return
         e.preventDefault()
+        setIsFormOpen(false)
+        if (!taskTitle || !taskPriority) return
         setTasks([{
             taskTitle: taskTitle,
             taskDescription: taskDescription,
-            taskPriority: taskPriority
+            taskPriority: taskPriority,
+            taskID: Date.now()
         }, ...tasks])
-        setIsFormOpen(false)
     }
 
     return (
