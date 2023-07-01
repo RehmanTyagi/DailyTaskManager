@@ -7,7 +7,6 @@ import HalfCircle from "../halfCircle/halfCircle.component";
 const Task = ({ title, description, priority, isCircleFlip, taskID }) => {
 
     const { tasks, setTasks } = useContext(AppContext)
-
     // circle color on card
     const circleColor = () => {
         switch (priority) {
@@ -22,7 +21,8 @@ const Task = ({ title, description, priority, isCircleFlip, taskID }) => {
         if (e.target.parentNode.classList.contains('task-card')) {
             e.target.parentNode.classList.add('deleteAnimation')
             setTimeout(() => {
-                setTasks(tasks.filter(task => task.taskID !== id))
+                setTasks(tasks.map(task => task.taskID === id ? { isCompleted: true, ...task } : task))
+                e.target.parentNode.style.display = 'none'
             }, 400);
         }
     }

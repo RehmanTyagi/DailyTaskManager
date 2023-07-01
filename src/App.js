@@ -11,6 +11,7 @@ import TaskForm from './components/taskForm/taskForm.component'
 
 function App() {
   const { isFormOpen, tasks } = useContext(AppContext)
+  const pendingTasks = tasks.filter(task => task.isCompleted !== true).length
 
   return (
     <div className="application">
@@ -19,7 +20,7 @@ function App() {
       }
       <AppHeader />
       <ProgressBar tasks={tasks} />
-      <div className="today-total-task"><span>You have <span>{tasks.length}</span> tasks for today</span><BsReceipt /></div>
+      <div className="today-total-task"><span>You have <span>{pendingTasks}</span> pending tasks for today</span><BsReceipt /></div>
       <TaskContainer tasks={tasks} />
     </div>
   )
