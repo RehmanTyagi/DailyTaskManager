@@ -19,11 +19,11 @@ const Task = ({ title, description, priority, isCircleFlip, taskID }) => {
     }
 
     const handleTaskDelete = (e, id) => {
-        if (e.target.classList.contains('task-card')) {
-            e.target.classList.add('deleteAnimation')
+        if (e.target.parentNode.classList.contains('task-card')) {
+            e.target.parentNode.classList.add('deleteAnimation')
             setTimeout(() => {
                 setTasks(tasks.filter(task => task.taskID !== id))
-            }, 500);
+            }, 400);
         }
     }
 
