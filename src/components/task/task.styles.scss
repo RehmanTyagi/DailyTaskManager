@@ -32,3 +32,13 @@
 .low {
   background-color: #023047;
 }
+
+.deleteAnimation {
+  animation: delete 0.5s ease-in-out;
+}
+
+@keyframes delete {
+  to {
+    transform: translateX(-100%);
+  }
+}

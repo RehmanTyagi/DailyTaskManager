@@ -8,7 +8,6 @@ import ProgressCircle from '../progressCircle/progressCircle.component'
 const ProgressBar = ({ tasks }) => {
     const DailyTotalTasks = tasks.map(task => task).length
     const progressPercentage = DailyTotalTasks / DailyTotalTasks * 100
-    console.log(DailyTotalTasks, progressPercentage)
 
     return (
         <div className="progress-container">

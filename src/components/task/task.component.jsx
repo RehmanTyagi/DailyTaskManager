@@ -6,7 +6,6 @@ import HalfCircle from "../halfCircle/halfCircle.component";
 
 const Task = ({ title, description, priority, isCircleFlip, taskID }) => {
 
-    // tasks coming from AppContext file
     const { tasks, setTasks } = useContext(AppContext)
 
     // circle color on card
@@ -19,13 +18,17 @@ const Task = ({ title, description, priority, isCircleFlip, taskID }) => {
         }
     }
 
-    // on touch drag the selected item will be deleted from tasks array
-    const handleDeleteTask = (id) => {
-        setTasks(tasks.filter(task => task.taskID !== id))
+    const handleTaskDelete = (e, id) => {
+        if (e.target.classList.contains('task-card')) {
+            e.target.classList.add('deleteAnimation')
+            setTimeout(() => {
+                setTasks(tasks.filter(task => task.taskID !== id))
+            }, 500);
+        }
     }
 
     return (
-        <div onTouchStart={() => handleDeleteTask(taskID)} className={`task-card ${priority}`}>
+        <div onTouchMove={(e) => handleTaskDelete(e, taskID)} className={`task-card ${priority}`}>
             <p className="task-title">{title}</p>
             <p className="task-description">{description}</p>
             <p className="task-importance">Priority: <span>{priority}</span></p>
